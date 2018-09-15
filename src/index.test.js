@@ -9,7 +9,7 @@ describe('Our first test', () => {
 });
 
 describe('index.html', () => {
-    it('should say hello', () => {
+    it('should have h1 that says users', () => {
     // it('should say hello', (done) => {  // if async use the done param
         const index = fs.readFileSync('./src/index.html', "utf-8");
         // jsdom.env(index, function(err, window) {
@@ -21,7 +21,7 @@ describe('index.html', () => {
         // The new version, use the JSDOM constructor as seen below
         const dom = new JSDOM(index);
         const h1 = dom.window.document.getElementsByTagName('h1')[0];
-        expect(h1.innerHTML).to.equal("Hello World!");
+        expect(h1.innerHTML).to.equal("Users");
         // done(); // if function is async use the done method to tell 'it' the test has finished!
         dom.window.close;
     })
